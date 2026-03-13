@@ -7,6 +7,7 @@ import joblib
 # Load artifacts
 model = tf.keras.models.load_model("artifacts/housing_model.h5")
 scaler = joblib.load("artifacts/scaler.pkl")
+feature_names = joblib.load("artifacts/feature_names.pkl")
 
 st.title("Hamilton County Housing Value Predictor")
 st.caption("Educational use only. Predictions are approximate.")
@@ -47,4 +48,4 @@ if st.button("Predict"):
 
     prediction = model.predict(input_scaled)[0][0]
 
-    st.success(f"Estimated appraised value: ${prediction:,.0f}")
+    st.success(f"Estimated appraised value: ${prediction:,.0f}")iction:,.0f}")
